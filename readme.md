@@ -155,11 +155,9 @@ A full-featured, secure, and scalable online bookstore built with **Go (Golang)*
 - `GET /users?role=customer` - Get all customers (admin only)
 - `GET /reports` - Get sales reports (admin only)
 
-> 📖 **Full API documentation available in the project repository**
-
 ---
 
-## 🧪 Testing
+##  Testing
 
 ### Run Unit Tests
 ```bash
@@ -204,7 +202,7 @@ bookwise/
 
 ---
 
-## 📈 Performance & Scalability
+##  Performance & Scalability
 
 - **Rate Limiting**: Prevents abuse and ensures fair usage
 - **Efficient Queries**: Optimized database operations
