@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-02-01T15:47:24.9021304+01:00",
+  "total_revenue": 152.98,
+  "total_orders": 2,
+  "top_selling_books": [
+    {
+      "book": {
+        "id": 2,
+        "title": "The Handmaid's Talezz",
+        "author": {
+          "id": 6,
+          "first_name": "GHITA",
+          "last_name": "BELLAMINE",
+          "bio": "e"
+        },
+        "genres": [
+          "General"
+        ],
+        "published_at": "0001-01-01T00:00:00Z",
+        "price": 14.99,
+        "stock": 78
+      },
+      "quantity_sold": 2
+    }
+  ]
+}

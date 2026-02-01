@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-01-30T23:16:55.1991137+01:00",
+  "total_revenue": 69.96,
+  "total_orders": 2,
+  "top_selling_books": [
+    {
+      "book": {
+        "id": 2,
+        "title": "The Handmaid's Tale",
+        "author": {
+          "id": 2,
+          "first_name": "Margaret",
+          "last_name": "Atwood",
+          "bio": "Canadian author known for The Handmaid's Tale"
+        },
+        "genres": [
+          "Dystopian",
+          "Feminist Literature"
+        ],
+        "published_at": "1985-06-01T00:00:00Z",
+        "price": 14.99,
+        "stock": 13
+      },
+      "quantity_sold": 2
+    },
+    {
+      "book": {
+        "id": 1,
+        "title": "JSON Guide",
+        "author": {
+          "id": 1,
+          "first_name": "JSON",
+          "last_name": "Author",
+          "bio": "Test author"
+        },
+        "genres": [
+          "Programming"
+        ],
+        "published_at": "2026-01-26T00:00:00Z",
+        "price": 19.99,
+        "stock": 2
+      },
+      "quantity_sold": 2
+    }
+  ]
+}

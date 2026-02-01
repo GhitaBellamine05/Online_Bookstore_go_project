@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title> BS - Online Bookstore</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Notifications Container -->
+    <div id="notifications"></div>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content auth-modal">
+            <div class="modal-header">
+                <h3 id="auth-modal-title"><i class="fas fa-user-circle"></i> Welcome to BookWise</h3>
+                <span class="close" onclick="closeAuthModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="auth-form">
+                    <p class="welcome-text">Sign in to access your personal bookstore dashboard</p>
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> Username</label>
+                        <input type="text" id="auth-username" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-lock"></i> Password</label>
+                        <input type="password" id="auth-password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-actions">
+                        <button onclick="login()" class="btn-primary btn-block">
+                            <i class="fas fa-sign-in-alt"></i> Sign In
+                        </button>
+                        <button onclick="switchToRegister()" class="btn-secondary btn-block">
+                            <i class="fas fa-user-plus"></i> Create Account
+                        </button>
+                    </div>
+                    <div id="auth-error" class="error"></div>
+                </div>
+                
+                <div id="register-form" style="display:none;">
+    <p class="welcome-text">Join our community of book lovers!</p>
+    <div class="form-group">
+        <label><i class="fas fa-user-tag"></i> Full Name</label>
+        <input type="text" id="reg-name" placeholder="Your full name (e.g., John Doe)" required>
+    </div>
+    <div class="form-group">
+        <label><i class="fas fa-user"></i> Username</label>
+        <input type="text" id="reg-username" placeholder="Choose a username" required>
+    </div>
+    <div class="form-group">
+        <label><i class="fas fa-envelope"></i> Email</label>
+        <input type="email" id="reg-email" placeholder="Enter your email" required>
+    </div>
+    <div class="form-group">
+        <label><i class="fas fa-lock"></i> Password</label>
+        <input type="password" id="reg-password" placeholder="Create a strong password" required>
+        <small>Password must be at least 8 characters</small>
+    </div>
+    <div class="form-actions">
+        <button onclick="register()" class="btn-primary btn-block">
+            <i class="fas fa-user-plus"></i> Create Account
+        </button>
+        <button onclick="switchToLogin()" class="btn-secondary btn-block">
+            <i class="fas fa-arrow-left"></i> Back to Login
+        </button>
+    </div>
+    <div id="register-error" class="error"></div>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1><i class="fas fa-book"></i> BookWise</h1>
+                <p class="tagline">Your Personal Bookstore Experience</p>
+            </div>
+            
+            <div class="user-section" id="guest-section">
+                <button onclick="openAuthModal()" class="btn-login">
+                    <i class="fas fa-user"></i> Sign In
+                </button>
+            </div>
+            
+            <div class="user-section" id="user-section" style="display:none;">
+                <div class="user-info">
+                    <span class="user-role" id="user-role-badge"></span>
+                    <span class="username" id="username-display"></span>
+                </div>
+                <button onclick="logout()" class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="content">
+        <!-- Welcome Section -->
+        <section id="welcome" class="section active">
+            <div class="welcome-container">
+                <div class="welcome-content">
+                    <h2>Welcome to BookWise</h2>
+                    <p class="subtitle">Discover, explore, and manage your favorite books</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-book-open"></i>
+                            <h3>Browse Books</h3>
+                            <p>Explore our extensive collection of books across all genres</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-user-edit"></i>
+                            <h3>Meet Authors</h3>
+                            <p>Discover the writers behind your favorite stories</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h3>Place Orders</h3>
+                            <p>Create orders and track your purchases</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-section">
+                        <p>Ready to get started?</p>
+                        <button onclick="openAuthModal()" class="btn-primary btn-large">
+                            <i class="fas fa-user-plus"></i> Create Your Account
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section">
+            <div class="dashboard-header">
+                <h2><i class="fas fa-tachometer-alt"></i> Dashboard</h2>
+                <div class="dashboard-actions">
+                    <button onclick="loadDashboard()" class="btn-outline">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Admin Dashboard -->
+            <div id="admin-dashboard" style="display:none;">
+                <div class="stats-grid">
+                    <div class="stat-card primary">
+                        <div class="stat-icon"><i class="fas fa-book"></i></div>
+                        <div class="stat-info">
+                            <h3>Total Books</h3>
+                            <p id="stat-books" class="stat-number">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card secondary">
+                        <div class="stat-icon"><i class="fas fa-user-edit"></i></div>
+                        <div class="stat-info">
+                            <h3>Total Authors</h3>
+                            <p id="stat-authors" class="stat-number">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-info">
+                            <h3>Total Customers</h3>
+                            <p id="stat-customers" class="stat-number">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card danger">
+                        <div class="stat-icon"><i class="fas fa-box"></i></div>
+                        <div class="stat-info">
+                            <h3>Total Orders</h3>
+                            <p id="stat-orders" class="stat-number">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card warning">
+                        <div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
+                        <div class="stat-info">
+                            <h3>Total Revenue</h3>
+                            <p class="stat-number">$<span id="stat-revenue">0.00</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-actions">
+                    <h3><i class="fas fa-tools"></i> Admin Management</h3>
+                    <div class="action-buttons">
+                        <button onclick="showSection('books')" class="btn-primary">
+                            <i class="fas fa-book"></i> Manage Books
+                        </button>
+                        <button onclick="showSection('authors')" class="btn-primary">
+                            <i class="fas fa-user-edit"></i> Manage Authors
+                        </button>
+                        <button onclick="showSection('customers')" class="btn-primary">
+                            <i class="fas fa-users"></i> Manage Customers
+                        </button>
+                        <button onclick="showSection('all-orders')" class="btn-primary">
+                            <i class="fas fa-boxes"></i> All Orders
+                        </button>
+                        <button onclick="showSection('reports')" class="btn-primary">
+                            <i class="fas fa-chart-bar"></i> View Reports
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Customer Dashboard -->
+            <div id="customer-dashboard" style="display:none;">
+                <div class="customer-welcome">
+                    <h3>Welcome back, <span id="customer-name"></span>!</h3>
+                    <p>Your personal bookstore dashboard</p>
+                </div>
+                
+                <div class="customer-stats">
+                    <div class="stat-card info">
+                        <div class="stat-icon"><i class="fas fa-book"></i></div>
+                        <div class="stat-info">
+                            <h3>Available Books</h3>
+                            <p id="customer-books-count" class="stat-number">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card info">
+                        <div class="stat-icon"><i class="fas fa-user-edit"></i></div>
+                        <div class="stat-info">
+                            <h3>Authors</h3>
+                            <p id="customer-authors-count" class="stat-number">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="stat-icon"><i class="fas fa-box-open"></i></div>
+                        <div class="stat-info">
+                            <h3>Your Orders</h3>
+                            <p id="customer-orders-count" class="stat-number">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card warning">
+                        <div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
+                        <div class="stat-info">
+                            <h3>Total Spent</h3>
+                            <p class="stat-number">$<span id="customer-total-spent">0.00</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="customer-actions">
+                    <h3><i class="fas fa-shopping-cart"></i> Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button onclick="showSection('books')" class="btn-primary">
+                            <i class="fas fa-book-open"></i> Browse Books
+                        </button>
+                        <button onclick="showSection('authors')" class="btn-primary">
+                            <i class="fas fa-user-edit"></i> View Authors
+                        </button>
+                        <button onclick="showSection('orders')" class="btn-primary">
+                            <i class="fas fa-box"></i> My Orders
+                        </button>
+                        <button onclick="openModal('order-form')" class="btn-success">
+                            <i class="fas fa-plus"></i> Place New Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Books Section -->
+        <section id="books" class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-book"></i> <span id="books-title">Browse Books</span></h2>
+                <div class="section-actions">
+                    <div class="search-box">
+                        <input type="text" id="book-search" placeholder="Search by title..." oninput="filterBooks()">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <button onclick="openModal('book-form')" class="btn-primary" id="add-book-btn" style="display:none;">
+                        <i class="fas fa-plus"></i> Add Book
+                    </button>
+                </div>
+            </div>
+            <div id="books-list" class="loading">Loading books...</div>
+        </section>
+
+        <!-- Authors Section -->
+        <section id="authors" class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-user-edit"></i> <span id="authors-title">View Authors</span></h2>
+                <button onclick="openModal('author-form')" class="btn-primary" id="add-author-btn" style="display:none;">
+                    <i class="fas fa-plus"></i> Add Author
+                </button>
+            </div>
+            <div id="authors-list" class="loading">Loading authors...</div>
+        </section>
+
+        <!-- Customers Section (Admin only) -->
+        <section id="customers" class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-users"></i> Customers Management</h2>
+                <button onclick="openModal('customer-form')" class="btn-primary" id="add-customer-btn">
+                    <i class="fas fa-plus"></i> Add Customer
+                </button>
+            </div>
+            <div id="customers-list" class="loading">Loading customers...</div>
+        </section>
+
+        <!-- My Orders Section (Customer) -->
+        <section id="orders" class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-box"></i> My Orders</h2>
+                <button onclick="openModal('order-form')" class="btn-primary" id="add-order-btn">
+                    <i class="fas fa-plus"></i> Place New Order
+                </button>
+            </div>
+            <div id="orders-list" class="loading">Loading orders...</div>
+        </section>
+
+        <!-- All Orders Section (Admin) -->
+        <section id="all-orders" class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-boxes"></i> All Orders</h2>
+            </div>
+            <div id="all-orders-list" class="loading">Loading orders...</div>
+        </section>
+
+        <!-- Reports Section (Admin) -->
+        <section id="reports" class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-chart-bar"></i> Sales Reports</h2>
+                <button onclick="loadReports()" class="btn-outline">
+                    <i class="fas fa-sync-alt"></i> Refresh Reports
+                </button>
+            </div>
+            <div id="reports-list" class="loading">Loading reports...</div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title"><i class="fas fa-edit"></i> Form Title</h3>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="modal-form"></div>
+                <div id="form-error" class="error"></div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="submitModalForm()" class="btn-primary" id="modal-submit">
+                    <i class="fas fa-save"></i> Submit
+                </button>
+                <button onclick="closeModal()" class="btn-secondary">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

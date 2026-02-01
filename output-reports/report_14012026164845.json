@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-01-14T16:48:45.0325399+01:00",
+  "total_revenue": 51.5398,
+  "total_orders": 2,
+  "top_selling_books": [
+    {
+      "book": {
+        "id": 1,
+        "title": "1984",
+        "author": {
+          "first_name": "",
+          "last_name": "",
+          "bio": ""
+        },
+        "genres": [
+          "Dystopian",
+          "Political Fiction"
+        ],
+        "published_at": "1949-06-08T00:00:00Z",
+        "price": 12.99,
+        "stock": 50
+      },
+      "quantity_sold": 4
+    }
+  ]
+}

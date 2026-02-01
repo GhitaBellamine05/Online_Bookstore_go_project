@@ -1,0 +1,43 @@
+{
+  "timestamp": "2026-01-31T21:41:14.6243771+01:00",
+  "total_revenue": 197.95,
+  "total_orders": 4,
+  "top_selling_books": [
+    {
+      "book": {
+        "id": 2,
+        "title": "The Handmaid's Tale",
+        "author": {
+          "id": 2,
+          "first_name": "",
+          "last_name": ""
+        },
+        "genres": [
+          "General"
+        ],
+        "published_at": "0001-01-01T00:00:00Z",
+        "price": 14.99,
+        "stock": 80
+      },
+      "quantity_sold": 5
+    },
+    {
+      "book": {
+        "id": 3,
+        "title": "hii ghita test edit ",
+        "author": {
+          "id": 2,
+          "first_name": "",
+          "last_name": ""
+        },
+        "genres": [
+          "General"
+        ],
+        "published_at": "0001-01-01T00:00:00Z",
+        "price": 123,
+        "stock": 22213
+      },
+      "quantity_sold": 1
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-01-22T09:51:50.5250382+01:00",
+  "total_revenue": 70.98,
+  "total_orders": 2,
+  "top_selling_books": [
+    {
+      "book": {
+        "id": 2,
+        "title": "Exhalation",
+        "author": {
+          "id": 5,
+          "first_name": "",
+          "last_name": "",
+          "bio": ""
+        },
+        "genres": [
+          "Science Fiction",
+          "Short Stories"
+        ],
+        "published_at": "2019-05-07T00:00:00Z",
+        "price": 18.5,
+        "stock": 16
+      },
+      "quantity_sold": 2
+    },
+    {
+      "book": {
+        "id": 3,
+        "title": "The Witch Elm",
+        "author": {
+          "id": 6,
+          "first_name": "",
+          "last_name": "",
+          "bio": ""
+        },
+        "genres": [
+          "Mystery",
+          "Psychological Thriller"
+        ],
+        "published_at": "2018-10-09T00:00:00Z",
+        "price": 15.99,
+        "stock": 11
+      },
+      "quantity_sold": 1
+    },
+    {
+      "book": {
+        "id": 1,
+        "title": "Americanah",
+        "author": {
+          "id": 4,
+          "first_name": "",
+          "last_name": "",
+          "bio": ""
+        },
+        "genres": [
+          "Literary Fiction",
+          "Immigration"
+        ],
+        "published_at": "2013-05-14T00:00:00Z",
+        "price": 16.99,
+        "stock": 24
+      },
+      "quantity_sold": 1
+    }
+  ]
+}
