@@ -1,0 +1,498 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+% Page setup
+\geometry{a4paper, margin=1in}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+% Colors for code
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Code listing setup
+\lstdefinestyle{json}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single,
+    rulecolor=\color{black}
+}
+
+\lstdefinestyle{http}{
+    backgroundcolor=\color{backcolour},
+    basicstyle=\ttfamily\footnotesize,
+    frame=single,
+    rulecolor=\color{black}
+}
+
+% Title formatting
+\titleformat{\section}{\large\bfseries\color{blue}}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries\color{darkblue}}{\thesubsection}{1em}{}
+
+\begin{document}
+
+\title{\textbf{BookWise Online Bookstore} \\ \large API Documentation}
+\author{}
+\date{\today}
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+This document provides comprehensive documentation for the BookWise Online Bookstore RESTful API. The API supports JWT-based authentication, role-based access control, and dual storage modes (JSON and SQLite).
+
+\section{Base Information}
+\begin{itemize}
+    \item \textbf{Base URL}: \texttt{http://localhost:1010}
+    \item \textbf{Authentication}: JWT Bearer Token
+    \item \textbf{Content-Type}: \texttt{application/json}
+    \item \textbf{Rate Limiting}: Implemented for security
+\end{itemize}
+
+\section{Authentication}
+
+\subsection{POST /auth/register}
+Register a new user account.
+
+\textbf{Request Body:}
+\begin{lstlisting}[style=json]
+{
+  "name": "string",
+  "username": "string",
+  "email": "string",
+  "password": "string"
+}
+\end{lstlisting}
+
+\textbf{Success Response (201):}
+\begin{lstlisting}[style=json]
+{
+  "user_id": 1,
+  "username": "string",
+  "role": "customer",
+  "name": "string",
+  "email": "string",
+  "token": "jwt_token"
+}
+\end{lstlisting}
+
+\textbf{Error Responses:}
+\begin{itemize}
+    \item \texttt{400 Bad Request} - Missing fields, invalid email, weak password, or duplicate username
+    \item \texttt{429 Too Many Requests} - Rate limit exceeded (5 requests per 10 seconds)
+\end{itemize}
+
+\subsection{POST /auth/login}
+Authenticate existing user.
+
+\textbf{Request Body:}
+\begin{lstlisting}[style=json]
+{
+  "username": "string",
+  "password": "string"
+}
+\end{lstlisting}
+
+\textbf{Success Response (200):}
+\begin{lstlisting}[style=json]
+{
+  "user_id": 1,
+  "username": "string",
+  "role": "customer",
+  "name": "string",
+  "email": "string",
+  "token": "jwt_token"
+}
+\end{lstlisting}
+
+\textbf{Error Responses:}
+\begin{itemize}
+    \item \texttt{401 Unauthorized} - Invalid credentials
+    \item \texttt{429 Too Many Requests} - Rate limit exceeded (5 requests per 10 seconds)
+\end{itemize}
+
+\section{Books Endpoints}
+
+\subsection{GET /books}
+Get all books (public endpoint).
+
+\textbf{Success Response (200):}
+\begin{lstlisting}[style=json]
+[
+  {
+    "id": 1,
+    "title": "string",
+    "author": {
+      "id": 1,
+      "first_name": "string",
+      "last_name": "string",
+      "bio": "string"
+    },
+    "genres": ["string"],
+    "published_at": "2023-01-01T00:00:00Z",
+    "price": 19.99,
+    "stock": 10
+  }
+]
+\end{lstlisting}
+
+\subsection{GET /books/\{id\}}
+Get specific book by ID (public endpoint).
+
+\textbf{Success Response (200):} Same structure as above, single object.
+
+\textbf{Error Responses:}
+\begin{itemize}
+    \item \texttt{404 Not Found} - Book not found
+\end{itemize}
+
+\subsection{POST /books (Admin Only)}
+Create new book.
+
+\textbf{Headers:}
+\begin{lstlisting}[style=http]
+Authorization: Bearer <admin_token>
+\end{lstlisting}
+
+\textbf{Request Body:}
+\begin{lstlisting}[style=json]
+{
+  "title": "string",
+  "author": {
+    "id": 1
+  },
+  "genres": ["Fiction"],
+  "price": 19.99,
+  "stock": 10
+}
+\end{lstlisting}
+
+\textbf{Success Response (201):} Complete book object with author details.
+
+\textbf{Error Responses:}
+\begin{itemize}
+    \item \texttt{401 Unauthorized} - Missing/invalid token
+    \item \texttt{403 Forbidden} - User not admin
+    \item \texttt{400 Bad Request} - Invalid input
+    \item \texttt{429 Too Many Requests} - Rate limit exceeded
+\end{itemize}
+
+\subsection{PUT /books/\{id\} (Admin Only)}
+Update existing book.
+
+\textbf{Headers:}
+\begin{lstlisting}[style=http]
+Authorization: Bearer <admin_token>
+\end{lstlisting}
+
+\textbf{Request Body:} Same as POST /books.
+
+\textbf{Success Response (200):} Updated book object.
+
+\textbf{Error Responses:} Same as POST /books plus \texttt{404 Not Found}.
+
+\subsection{DELETE /books/\{id\} (Admin Only)}
+Delete book.
+
+\textbf{Headers:}
+\begin{lstlisting}[style=http]
+Authorization: Bearer <admin_token>
+\end{lstlisting}
+
+\textbf{Success Response (204):} No content.
+
+\textbf{Error Responses:} Same as PUT /books/\{id\}.
+
+\section{Authors Endpoints}
+
+\subsection{GET /authors}
+Get all authors (public endpoint).
+
+\textbf{Success Response (200):}
+\begin{lstlisting}[style=json]
+[
+  {
+    "id": 1,
+    "first_name": "string",
+    "last_name": "string",
+    "bio": "string"
+  }
+]
+\end{lstlisting}
+
+\subsection{GET /authors/\{id\}}
+Get specific author by ID (public endpoint).
+
+\textbf{Success Response (200):} Single author object.
+
+\textbf{Error Responses:}
+\begin{itemize}
+    \item \texttt{404 Not Found} - Author not found
+\end{itemize}
+
+\subsection{POST /authors (Admin Only)}
+Create new author.
+
+\textbf{Headers:}
+\begin{lstlisting}[style=http]
+Authorization: Bearer <admin_token>
+\end{lstlisting}
+
+\textbf{Request Body:}
+\begin{lstlisting}[style=json]
+{
+  "first_name": "string",
+  "last_name": "string",
+  "bio": "string"
+}
+\end{lstlisting}
+
+\textbf{Success Response (201):} Complete author object.
+
+\textbf{Error Responses:}
+\begin{itemize}
+    \item \texttt{401 Unauthorized} - Missing/invalid token
+    \item \texttt{403 Forbidden} - User not admin
+    \item \texttt{400 Bad Request} - Missing first/last name
+    \item \texttt{429 Too Many Requests} - Rate limit exceeded
+\end{itemize}
+
+\subsection{PUT /authors/\{id\} (Admin Only)}
+Update existing author.
+
+\textbf{Headers:}
+\begin{lstlisting}[style=http]
+Authorization: Bearer <admin_token>
+\end{lstlisting}
+
+\textbf{Request Body:} Same as POST /authors.
+
+\textbf{Success Response (200):} Updated author object.
+
+\textbf{Error Responses:} Same as POST /authors plus \texttt{404 Not Found}.
+
+\subsection{DELETE /authors/\{id\} (Admin Only)}
+Delete author.
+
+\textbf{Headers:}
+\begin{lstlisting}[style=http]
+Authorization: Bearer <admin_token>
+\end{lstlisting}
+
+\textbf{Success Response (204):} No content.
+
+\textbf{Error Responses:} Same as PUT /authors/\{id\}.
+
+\section{Orders Endpoints}
+
+\subsection{POST /orders}
+Create new order.
+
+\textbf{Headers:}
+\begin{lstlisting}[style=http]
+Authorization: Bearer <customer_token>
+\end{lstlisting}
+
+\textbf{Request Body:}
+\begin{lstlisting}[style=json]
+{
+  "items": [
+    {
+      "book_id": 1,
+      "quantity": 2
+    }
+  ],
+  "total_price": 39.98
+}
+\end{lstlisting}
+
+\textbf{Success Response (201):}
+\begin{lstlisting}[style=json]
+{
+  "id": 1,
+  "user_id": 1,
+  "user": {
+    "id": 1,
+    "username": "string",
+    "role": "customer",
+    "name": "string",
+    "email": "string"
+  },
+  "items": [
+    {
+      "book": {
+        "id": 1,
+        "title": "string",
+        "author": {
+          "first_name": "string",
+          "last_name": "string"
+        },
+        "price": 19.99
+      },
+      "quantity": 2
+    }
+  ],
+  "total_price": 39.98,
+  "created_at": "2023-01-01T00:00:00Z",
+  "status": "confirmed"
+}
+\end{lstlisting}
+
+\textbf{Error Responses:}
+\begin{itemize}
+    \item \texttt{401 Unauthorized} - Missing/invalid token
+    \item \texttt{400 Bad Request} - Invalid input, insufficient stock, or book not found
+    \item \texttt{429 Too Many Requests} - Rate limit exceeded
+\end{itemize}
+
+\subsection{GET /orders}
+Get current user's orders.
+
+\textbf{Headers:}
+\begin{lstlisting}[style=http]
+Authorization: Bearer <customer_token>
+\end{lstlisting}
+
+\textbf{Success Response (200):} Array of order objects.
+
+\textbf{Error Responses:}
+\begin{itemize}
+    \item \texttt{401 Unauthorized} - Missing/invalid token
+    \item \texttt{429 Too Many Requests} - Rate limit exceeded
+\end{itemize}
+
+\section{Users Endpoints}
+
+\subsection{GET /users/me}
+Get current user profile.
+
+\textbf{Headers:}
+\begin{lstlisting}[style=http]
+Authorization: Bearer <token>
+\end{lstlisting}
+
+\textbf{Success Response (200):}
+\begin{lstlisting}[style=json]
+{
+  "id": 1,
+  "username": "string",
+  "role": "customer",
+  "name": "string",
+  "email": "string"
+}
+\end{lstlisting}
+
+\textbf{Error Responses:}
+\begin{itemize}
+    \item \texttt{401 Unauthorized} - Missing/invalid token
+    \item \texttt{429 Too Many Requests} - Rate limit exceeded
+\end{itemize}
+
+\subsection{GET /users?role=customer (Admin Only)}
+Get all customers.
+
+\textbf{Headers:}
+\begin{lstlisting}[style=http]
+Authorization: Bearer <admin_token>
+\end{lstlisting}
+
+\textbf{Success Response (200):} Array of customer objects.
+
+\textbf{Error Responses:}
+\begin{itemize}
+    \item \texttt{401 Unauthorized} - Missing/invalid token
+    \item \texttt{403 Forbidden} - User not admin
+    \item \texttt{429 Too Many Requests} - Rate limit exceeded
+\end{itemize}
+
+\section{Reports Endpoint}
+
+\subsection{GET /reports (Admin Only)}
+Get sales reports.
+
+\textbf{Headers:}
+\begin{lstlisting}[style=http]
+Authorization: Bearer <admin_token>
+\end{lstlisting}
+
+\textbf{Success Response (200):}
+\begin{lstlisting}[style=json]
+{
+  "total_orders": 5,
+  "total_revenue": 199.90,
+  "average_order_value": 39.98
+}
+\end{lstlisting}
+
+\textbf{Error Responses:}
+\begin{itemize}
+    \item \texttt{401 Unauthorized} - Missing/invalid token
+    \item \texttt{403 Forbidden} - User not admin
+    \item \texttt{429 Too Many Requests} - Rate limit exceeded
+\end{itemize}
+
+\section{Rate Limiting}
+
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Endpoint Type} & \textbf{Limit} & \textbf{Purpose} \\
+\hline
+Authentication (/auth/*) & 5 requests / 10 seconds & Prevent brute force attacks \\
+Admin endpoints & 10 requests / 30 seconds & Prevent admin spam \\
+API endpoints & 20 requests / second & Allow normal usage \\
+Public endpoints & No rate limiting & Allow public browsing \\
+\hline
+\end{tabular}
+
+\textbf{When rate limited:}
+\begin{itemize}
+    \item \textbf{Status}: \texttt{429 Too Many Requests}
+    \item \textbf{Header}: \texttt{Retry-After: 60}
+    \item \textbf{Body}: \texttt{\{"error":"rate limit exceeded - too many requests"\}}
+\end{itemize}
+
+\section{Common Error Format}
+
+All error responses follow this format:
+\begin{lstlisting}[style=json]
+{
+  "error": "descriptive error message"
+}
+\end{lstlisting}
+
+\section{Data Types}
+
+\begin{itemize}
+    \item \textbf{Content-Type}: Always \texttt{application/json}
+    \item \textbf{Date Format}: ISO 8601 (\texttt{2023-01-01T00:00:00Z})
+    \item \textbf{Currency}: USD with 2 decimal places
+    \item \textbf{IDs}: Always positive integers
+    \item \textbf{Stock}: Non-negative integers
+    \item \textbf{Passwords}: Minimum 8 characters
+\end{itemize}
+
+\end{document}
