@@ -108,14 +108,19 @@ A full-featured, secure, and scalable online bookstore built with **Go (Golang)*
 ##  Default Users
 
 ### Admin User (Create via API)
-```json
-{
-  "username": "admin",
-  "password": "AdminSecure123!",
-  "role": "admin",
-  "name": "System Administrator",
-  "email": "admin@bookwise.com"
-}
+```powershell
+$body = @{
+    name = "Admin"
+    username = "admin"
+    email = "admin@test.com"
+    password = "AdminPass123!"
+    role = "admin"
+} | ConvertTo-Json
+
+Invoke-RestMethod -Uri "http://localhost:1010/auth/register" `
+                  -Method POST `
+                  -Body $body `
+                  -ContentType "application/json"
 ```
 
 ### Customer Users
