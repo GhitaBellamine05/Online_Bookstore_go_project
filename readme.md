@@ -56,8 +56,7 @@ A full-featured, secure, and scalable online bookstore built with **Go (Golang)*
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/bookwise.git
-   cd bookwise
+   git clone [https://github.com/GhitaBellamine05/Online_Bookstore_go_project.git]
    ```
 
 2. **Install dependencies**
