@@ -82,7 +82,7 @@ A full-featured, secure, and scalable online bookstore built with **Go (Golang)*
    ```
 
 4. **Access the application**
-   - Open your browser at `http://localhost:1010`
+   - Open your browser at `http://localhost:8080`
    - Register as a customer or create an admin user via API
 
 ---
@@ -117,7 +117,7 @@ $body = @{
     role = "admin"
 } | ConvertTo-Json
 
-Invoke-RestMethod -Uri "http://localhost:1010/auth/register" `
+Invoke-RestMethod -Uri "http://localhost:8080/auth/register" `
                   -Method POST `
                   -Body $body `
                   -ContentType "application/json"
@@ -176,6 +176,13 @@ go tool cover -html=coverage.out
 
 ### Manual Testing
 - **Rate Limiting**: Rapid login attempts should be blocked after 5 requests
+
+
+To test it, run in terminal : 
+```bash
+powershell -ExecutionPolicy Bypass -File .\test.ps1
+```
+
 - **Role-Based Access**: Customers cannot access admin features
 - **Data Persistence**: Restart server and verify data integrity
 - **Cross-Mode Compatibility**: Switch between JSON/SQL modes seamlessly

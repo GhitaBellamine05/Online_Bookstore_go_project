@@ -25,7 +25,7 @@ import (
 
 )
 
-const PORT = "1010"
+const PORT = "8080"
 func adminMiddleware(next http.HandlerFunc) http.HandlerFunc {
     return func(w http.ResponseWriter, r *http.Request) {
         authHeader := r.Header.Get("Authorization")
