@@ -107,16 +107,15 @@ A full-featured, secure, and scalable online bookstore built with **Go (Golang)*
 
 ##  Default Users
 
-### Admin User (Create via API)
+### Admin User (in both sql and json implementation)
 ```powershell
 $body = @{
-    name = "Admin"
+    name = "admin"
     username = "admin"
-    email = "admin@test.com"
-    password = "AdminPass123!"
+    email = "admin@gmail.com"
+    password = "123456789"
     role = "admin"
 } | ConvertTo-Json
-
 Invoke-RestMethod -Uri "http://localhost:8080/auth/register" `
                   -Method POST `
                   -Body $body `
@@ -130,6 +129,12 @@ Invoke-RestMethod -Uri "http://localhost:8080/auth/register" `
 
 ---
 
+
+if you want to test an admin user , use the following login parameters : 
+   username = "admin"
+   password = "123456789"
+
+   
 ##  API Endpoints
 
 ### Authentication
