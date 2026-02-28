@@ -1,0 +1,102 @@
+{
+  "timestamp": "2026-02-28T01:59:07.409433433Z",
+  "total_revenue": 610.61,
+  "total_orders": 8,
+  "top_selling_books": [
+    {
+      "book": {
+        "id": 2,
+        "title": "The Great Gatsby",
+        "author": {
+          "id": 2,
+          "first_name": "F. Scott",
+          "last_name": "Fitzgerald",
+          "bio": "American writer of the Jazz Age"
+        },
+        "genres": [
+          "General"
+        ],
+        "published_at": "0001-01-01T00:00:00Z",
+        "price": 15.99,
+        "stock": 151
+      },
+      "quantity_sold": 24
+    },
+    {
+      "book": {
+        "id": 1,
+        "title": "To Kill MockingBird",
+        "author": {
+          "id": 1,
+          "first_name": "Harper",
+          "last_name": "Lee",
+          "bio": "American novelist best known for To Kill a Mockingbird"
+        },
+        "genres": [
+          "General"
+        ],
+        "published_at": "0001-01-01T00:00:00Z",
+        "price": 14.99,
+        "stock": 140
+      },
+      "quantity_sold": 10
+    },
+    {
+      "book": {
+        "id": 3,
+        "title": "1984",
+        "author": {
+          "id": 3,
+          "first_name": "George",
+          "last_name": "Orwell",
+          "bio": "English novelist, known for 1984 and Animal Farm"
+        },
+        "genres": [
+          "General"
+        ],
+        "published_at": "0001-01-01T00:00:00Z",
+        "price": 15.99,
+        "stock": 177
+      },
+      "quantity_sold": 3
+    },
+    {
+      "book": {
+        "id": 4,
+        "title": "The Hobbit",
+        "author": {
+          "id": 5,
+          "first_name": "J.R.R.",
+          "last_name": "Tolkien",
+          "bio": "English writer, father of modern fantasy"
+        },
+        "genres": [
+          "General"
+        ],
+        "published_at": "0001-01-01T00:00:00Z",
+        "price": 13.99,
+        "stock": 149
+      },
+      "quantity_sold": 1
+    },
+    {
+      "book": {
+        "id": 5,
+        "title": "Brave New World",
+        "author": {
+          "id": 6,
+          "first_name": "Aldous",
+          "last_name": "Huxley",
+          "bio": "English writer, author of Brave New World"
+        },
+        "genres": [
+          "General"
+        ],
+        "published_at": "0001-01-01T00:00:00Z",
+        "price": 14.99,
+        "stock": 99
+      },
+      "quantity_sold": 1
+    }
+  ]
+}

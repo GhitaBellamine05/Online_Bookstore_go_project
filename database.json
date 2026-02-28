@@ -1,506 +1,486 @@
 {
   "books": {
-    "2": {
-      "id": 2,
-      "title": "The Handmaid's Talezz",
+    "1": {
+      "id": 1,
+      "title": "To Kill MockingBird",
       "author": {
-        "id": 6,
-        "first_name": "",
-        "last_name": ""
+        "id": 1,
+        "first_name": "Harper",
+        "last_name": "Lee",
+        "bio": "American novelist best known for To Kill a Mockingbird"
       },
       "genres": [
         "General"
       ],
       "published_at": "0001-01-01T00:00:00Z",
       "price": 14.99,
-      "stock": 68
+      "stock": 140
+    },
+    "2": {
+      "id": 2,
+      "title": "The Great Gatsby",
+      "author": {
+        "id": 2,
+        "first_name": "F. Scott",
+        "last_name": "Fitzgerald",
+        "bio": "American writer of the Jazz Age"
+      },
+      "genres": [
+        "General"
+      ],
+      "published_at": "0001-01-01T00:00:00Z",
+      "price": 15.99,
+      "stock": 151
+    },
+    "3": {
+      "id": 3,
+      "title": "1984",
+      "author": {
+        "id": 3,
+        "first_name": "George",
+        "last_name": "Orwell",
+        "bio": "English novelist, known for 1984 and Animal Farm"
+      },
+      "genres": [
+        "General"
+      ],
+      "published_at": "0001-01-01T00:00:00Z",
+      "price": 15.99,
+      "stock": 177
+    },
+    "4": {
+      "id": 4,
+      "title": "The Hobbit",
+      "author": {
+        "id": 5,
+        "first_name": "J.R.R.",
+        "last_name": "Tolkien",
+        "bio": "English writer, father of modern fantasy"
+      },
+      "genres": [
+        "General"
+      ],
+      "published_at": "0001-01-01T00:00:00Z",
+      "price": 13.99,
+      "stock": 149
+    },
+    "5": {
+      "id": 5,
+      "title": "Brave New World",
+      "author": {
+        "id": 6,
+        "first_name": "Aldous",
+        "last_name": "Huxley",
+        "bio": "English writer, author of Brave New World"
+      },
+      "genres": [
+        "General"
+      ],
+      "published_at": "0001-01-01T00:00:00Z",
+      "price": 14.99,
+      "stock": 99
     }
   },
   "authors": {
-    "11": {
-      "id": 11,
-      "first_name": "GHITA",
-      "last_name": "BELLAMINE",
-      "bio": " hell noo "
+    "1": {
+      "id": 1,
+      "first_name": "Harper",
+      "last_name": "Lee",
+      "bio": "American novelist best known for To Kill a Mockingbird"
+    },
+    "2": {
+      "id": 2,
+      "first_name": "F. Scott",
+      "last_name": "Fitzgerald",
+      "bio": "American writer of the Jazz Age"
+    },
+    "3": {
+      "id": 3,
+      "first_name": "George",
+      "last_name": "Orwell",
+      "bio": "English novelist, known for 1984 and Animal Farm"
+    },
+    "4": {
+      "id": 4,
+      "first_name": "Jane",
+      "last_name": "Austen",
+      "bio": "English novelist known for romantic fiction"
+    },
+    "5": {
+      "id": 5,
+      "first_name": "J.R.R.",
+      "last_name": "Tolkien",
+      "bio": "English writer, father of modern fantasy"
     },
     "6": {
       "id": 6,
-      "first_name": "GHITA",
-      "last_name": "BELLAMINE",
-      "bio": "e"
-    },
-    "9": {
-      "id": 9,
-      "first_name": "dejdejdejdjedjjedjed",
-      "last_name": "kdkedkekdkedkekd",
-      "bio": "JDJEJDEJDJED"
+      "first_name": "Aldous",
+      "last_name": "Huxley",
+      "bio": "English writer, author of Brave New World"
     }
   },
   "users": {
     "1": {
       "id": 1,
-      "username": "json_admin",
-      "password": "$2a$10$QSqLs9fdWrLrhKl856w3AeXeZ0S6G/YAWrGq7FmGYcvp31T8lmxt6",
-      "role": "admin",
-      "name": "JSON Admin",
-      "email": "admin@json.com",
-      "address": {
-        "street": "JSON St",
-        "city": "JSON City",
-        "state": "JS",
-        "postal_code": "11111",
-        "country": "USA"
-      },
-      "created_at": "2026-01-25T23:33:58.9114407+01:00"
+      "username": "emma",
+      "password": "$2a$10$UU.R9nw9rNP5YnhaCcwyDew5xHzvY2AmzzPQZcTVIZaY5I/V3s0DW",
+      "role": "customer",
+      "name": "emma",
+      "email": "emma@gmail.com",
+      "address": {},
+      "created_at": "2026-02-28T01:45:36.744670492Z"
     },
     "2": {
       "id": 2,
-      "username": "json_user",
-      "password": "$2a$10$gZhzB7b7uGFDvVnsvMr9Pu1AF8vaivBlVIaYgHKa5u8ha.9tuTE7i",
-      "role": "customer",
-      "name": "JSON User",
-      "email": "user@json.com",
-      "address": {
-        "street": "User St",
-        "city": "User City",
-        "state": "US",
-        "postal_code": "22222",
-        "country": "USA"
-      },
-      "created_at": "2026-01-25T23:33:58.9958961+01:00"
+      "username": "admin",
+      "password": "$2a$10$sxtkB7jr7huVF6cXvpEflulKRU4yBlwE45Id..LE0Nei2H3kA5JwW",
+      "role": "admin",
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "address": {},
+      "created_at": "2026-02-28T01:46:19.393509235Z"
     },
     "3": {
       "id": 3,
-      "username": "marketing_manager",
-      "password": "$2a$10$xxKSaM9NJfM6P5VY213yBOjnCq8WCkiuGUckQGbOzV9BAG9sKpQdq",
-      "role": "admin",
-      "name": "Sarah Marketing",
-      "email": "sarah@bookstore.com",
-      "address": {
-        "street": "789 Marketing Blvd",
-        "city": "Bookville",
-        "state": "MK",
-        "postal_code": "77777",
-        "country": "USA"
-      },
-      "created_at": "2026-01-30T21:18:23.2691758+01:00"
+      "username": "ghita bellamine",
+      "password": "$2a$10$39f6Yq6lcxfuB1HBPzxnZO4/AgKlGcE8EyT8hq6/2ABOT2fYZuJ2m",
+      "role": "customer",
+      "name": "ghita",
+      "email": "ghita@gmail.com",
+      "address": {},
+      "created_at": "2026-02-28T01:47:05.445225879Z"
     },
     "4": {
       "id": 4,
-      "username": "bob_reader",
-      "password": "$2a$10$vKYlrrE.cv5LuuERZ0LjxegDsgaBzd6ZVeNQpaenQXFFL9rYRj0kC",
+      "username": "bob",
+      "password": "$2a$10$oqKY4.qGMJuYjCAni6DOj.nmqO.X7iZBDAEpSNViIdhGFxQJ6YPFy",
       "role": "customer",
-      "name": "Bob Thompson",
-      "email": "bob.thompson@email.com",
-      "address": {
-        "street": "321 Reader Lane",
-        "city": "Booktown",
-        "state": "RD",
-        "postal_code": "88888",
-        "country": "USA"
-      },
-      "created_at": "2026-01-30T21:18:23.3863399+01:00"
+      "name": "bob",
+      "email": "bob@gmail.com",
+      "address": {},
+      "created_at": "2026-02-28T01:55:18.316444224Z"
     },
     "5": {
       "id": 5,
-      "username": "john",
-      "password": "$2a$10$bYLLOQs1j4bEL4EDhNvhRuaHOG3pIWyEEa3LnZzeQiV8ctV8fpyBi",
+      "username": "fred",
+      "password": "$2a$10$7Ocfok6Isjk8cd7DzrSeeOraQkUMMSKodbMfAEEV.y6gdztgApB7y",
       "role": "customer",
-      "name": "john",
-      "email": "john@gmail.com",
+      "name": "fred",
+      "email": "fred@gmail.com",
       "address": {},
-      "created_at": "2026-01-31T00:06:52.1853005+01:00"
-    },
-    "6": {
-      "id": 6,
-      "username": "add",
-      "password": "$2a$10$Ld882.vlRtCL5WYTCNvFIeCFKvSF/9TE3nqgfk/5RMTGZKFoG0hCK",
-      "role": "customer",
-      "name": "add customer",
-      "email": "add@gmail.com",
-      "address": {},
-      "created_at": "2026-01-31T00:58:58.2913834+01:00"
-    },
-    "7": {
-      "id": 7,
-      "username": "ttt",
-      "password": "$2a$10$b3OYdMG1CGg9mEs4DnvF1uDBjk9NFPeUUceuquR2117r5axk04e7i",
-      "role": "customer",
-      "name": "tii",
-      "email": "t@gmail.com",
-      "address": {},
-      "created_at": "2026-01-31T22:40:41.8399294+01:00"
+      "created_at": "2026-02-28T01:55:45.584285359Z"
     }
   },
   "orders": {
     "1": {
       "id": 1,
-      "user_id": 2,
+      "user_id": 1,
       "user": {
-        "id": 2,
-        "username": "json_user",
-        "password": "$2a$10$gZhzB7b7uGFDvVnsvMr9Pu1AF8vaivBlVIaYgHKa5u8ha.9tuTE7i",
+        "id": 1,
+        "username": "emma",
+        "password": "$2a$10$UU.R9nw9rNP5YnhaCcwyDew5xHzvY2AmzzPQZcTVIZaY5I/V3s0DW",
         "role": "customer",
-        "name": "JSON User",
-        "email": "user@json.com",
-        "address": {
-          "street": "User St",
-          "city": "User City",
-          "state": "US",
-          "postal_code": "22222",
-          "country": "USA"
-        },
-        "created_at": "2026-01-25T23:33:58.9958961+01:00"
-      },
-      "items": [
-        {
-          "book": {
-            "id": 1,
-            "title": "",
-            "author": {
-              "first_name": "",
-              "last_name": ""
-            },
-            "genres": null,
-            "published_at": "0001-01-01T00:00:00Z",
-            "price": 0,
-            "stock": 0
-          },
-          "quantity": 1
-        }
-      ],
-      "total_price": 19.99,
-      "created_at": "2026-01-25T23:34:09.6482607+01:00",
-      "status": "confirmed"
-    },
-    "2": {
-      "id": 2,
-      "user_id": 4,
-      "user": {
-        "id": 4,
-        "username": "bob_reader",
-        "password": "$2a$10$vKYlrrE.cv5LuuERZ0LjxegDsgaBzd6ZVeNQpaenQXFFL9rYRj0kC",
-        "role": "customer",
-        "name": "Bob Thompson",
-        "email": "bob.thompson@email.com",
-        "address": {
-          "street": "321 Reader Lane",
-          "city": "Booktown",
-          "state": "RD",
-          "postal_code": "88888",
-          "country": "USA"
-        },
-        "created_at": "2026-01-30T21:18:23.3863399+01:00"
-      },
-      "items": [
-        {
-          "book": {
-            "id": 2,
-            "title": "",
-            "author": {
-              "first_name": "",
-              "last_name": ""
-            },
-            "genres": null,
-            "published_at": "0001-01-01T00:00:00Z",
-            "price": 0,
-            "stock": 0
-          },
-          "quantity": 1
-        }
-      ],
-      "total_price": 14.99,
-      "created_at": "2026-01-30T21:18:36.9152389+01:00",
-      "status": "confirmed"
-    },
-    "3": {
-      "id": 3,
-      "user_id": 4,
-      "user": {
-        "id": 4,
-        "username": "bob_reader",
-        "password": "$2a$10$vKYlrrE.cv5LuuERZ0LjxegDsgaBzd6ZVeNQpaenQXFFL9rYRj0kC",
-        "role": "customer",
-        "name": "Bob Thompson",
-        "email": "bob.thompson@email.com",
-        "address": {
-          "street": "321 Reader Lane",
-          "city": "Booktown",
-          "state": "RD",
-          "postal_code": "88888",
-          "country": "USA"
-        },
-        "created_at": "2026-01-30T21:18:23.3863399+01:00"
-      },
-      "items": [
-        {
-          "book": {
-            "id": 2,
-            "title": "",
-            "author": {
-              "first_name": "",
-              "last_name": ""
-            },
-            "genres": null,
-            "published_at": "0001-01-01T00:00:00Z",
-            "price": 0,
-            "stock": 0
-          },
-          "quantity": 1
-        },
-        {
-          "book": {
-            "id": 1,
-            "title": "",
-            "author": {
-              "first_name": "",
-              "last_name": ""
-            },
-            "genres": null,
-            "published_at": "0001-01-01T00:00:00Z",
-            "price": 0,
-            "stock": 0
-          },
-          "quantity": 2
-        }
-      ],
-      "total_price": 54.97,
-      "created_at": "2026-01-30T21:18:36.9423508+01:00",
-      "status": "confirmed"
-    },
-    "4": {
-      "id": 4,
-      "user_id": 2,
-      "user": {
-        "id": 2,
-        "username": "json_user",
-        "password": "$2a$10$gZhzB7b7uGFDvVnsvMr9Pu1AF8vaivBlVIaYgHKa5u8ha.9tuTE7i",
-        "role": "customer",
-        "name": "JSON User",
-        "email": "user@json.com",
-        "address": {
-          "street": "User St",
-          "city": "User City",
-          "state": "US",
-          "postal_code": "22222",
-          "country": "USA"
-        },
-        "created_at": "2026-01-25T23:33:58.9958961+01:00"
-      },
-      "items": [
-        {
-          "book": {
-            "id": 2,
-            "title": "",
-            "author": {
-              "first_name": "",
-              "last_name": ""
-            },
-            "genres": null,
-            "published_at": "0001-01-01T00:00:00Z",
-            "price": 0,
-            "stock": 0
-          },
-          "quantity": 2
-        }
-      ],
-      "total_price": 29.98,
-      "created_at": "2026-01-31T00:29:08.7212596+01:00",
-      "status": "confirmed"
-    },
-    "5": {
-      "id": 5,
-      "user_id": 6,
-      "user": {
-        "id": 6,
-        "username": "add",
-        "password": "$2a$10$Ld882.vlRtCL5WYTCNvFIeCFKvSF/9TE3nqgfk/5RMTGZKFoG0hCK",
-        "role": "customer",
-        "name": "add customer",
-        "email": "add@gmail.com",
+        "name": "emma",
+        "email": "emma@gmail.com",
         "address": {},
-        "created_at": "2026-01-31T00:58:58.2913834+01:00"
-      },
-      "items": [
-        {
-          "book": {
-            "id": 2,
-            "title": "",
-            "author": {
-              "first_name": "",
-              "last_name": ""
-            },
-            "genres": null,
-            "published_at": "0001-01-01T00:00:00Z",
-            "price": 0,
-            "stock": 0
-          },
-          "quantity": 1
-        }
-      ],
-      "total_price": 14.99,
-      "created_at": "2026-01-31T00:59:24.6004557+01:00",
-      "status": "confirmed"
-    },
-    "6": {
-      "id": 6,
-      "user_id": 2,
-      "user": {
-        "id": 2,
-        "username": "json_user",
-        "password": "$2a$10$gZhzB7b7uGFDvVnsvMr9Pu1AF8vaivBlVIaYgHKa5u8ha.9tuTE7i",
-        "role": "customer",
-        "name": "JSON User",
-        "email": "user@json.com",
-        "address": {
-          "street": "User St",
-          "city": "User City",
-          "state": "US",
-          "postal_code": "22222",
-          "country": "USA"
-        },
-        "created_at": "2026-01-25T23:33:58.9958961+01:00"
-      },
-      "items": [
-        {
-          "book": {
-            "id": 2,
-            "title": "",
-            "author": {
-              "first_name": "",
-              "last_name": ""
-            },
-            "genres": null,
-            "published_at": "0001-01-01T00:00:00Z",
-            "price": 0,
-            "stock": 0
-          },
-          "quantity": 2
-        }
-      ],
-      "total_price": 29.98,
-      "created_at": "2026-01-31T01:30:29.4482608+01:00",
-      "status": "confirmed"
-    },
-    "7": {
-      "id": 7,
-      "user_id": 5,
-      "user": {
-        "id": 5,
-        "username": "john",
-        "password": "$2a$10$bYLLOQs1j4bEL4EDhNvhRuaHOG3pIWyEEa3LnZzeQiV8ctV8fpyBi",
-        "role": "customer",
-        "name": "john",
-        "email": "john@gmail.com",
-        "address": {},
-        "created_at": "2026-01-31T00:06:52.1853005+01:00"
+        "created_at": "2026-02-28T01:45:36.744670492Z"
       },
       "items": [
         {
           "book": {
             "id": 3,
-            "title": "",
+            "title": "1984",
             "author": {
-              "first_name": "",
-              "last_name": ""
+              "id": 3,
+              "first_name": "George",
+              "last_name": "Orwell",
+              "bio": "English novelist, known for 1984 and Animal Farm"
             },
-            "genres": null,
+            "genres": [
+              "General"
+            ],
             "published_at": "0001-01-01T00:00:00Z",
-            "price": 0,
-            "stock": 0
-          },
-          "quantity": 1
-        }
-      ],
-      "total_price": 123,
-      "created_at": "2026-01-31T21:20:31.5429349+01:00",
-      "status": "confirmed"
-    },
-    "8": {
-      "id": 8,
-      "user_id": 2,
-      "user": {
-        "id": 2,
-        "username": "json_user",
-        "password": "$2a$10$gZhzB7b7uGFDvVnsvMr9Pu1AF8vaivBlVIaYgHKa5u8ha.9tuTE7i",
-        "role": "customer",
-        "name": "JSON User",
-        "email": "user@json.com",
-        "address": {
-          "street": "User St",
-          "city": "User City",
-          "state": "US",
-          "postal_code": "22222",
-          "country": "USA"
-        },
-        "created_at": "2026-01-25T23:33:58.9958961+01:00"
-      },
-      "items": [
-        {
-          "book": {
-            "id": 2,
-            "title": "",
-            "author": {
-              "first_name": "",
-              "last_name": ""
-            },
-            "genres": null,
-            "published_at": "0001-01-01T00:00:00Z",
-            "price": 0,
-            "stock": 0
+            "price": 15.99,
+            "stock": 180
           },
           "quantity": 2
         }
       ],
-      "total_price": 29.98,
-      "created_at": "2026-01-31T22:32:52.0612892+01:00",
+      "total_price": 31.98,
+      "created_at": "2026-02-28T01:56:31.998417223Z",
       "status": "confirmed"
     },
-    "9": {
-      "id": 9,
-      "user_id": 2,
+    "2": {
+      "id": 2,
+      "user_id": 1,
       "user": {
-        "id": 2,
-        "username": "json_user",
-        "password": "$2a$10$gZhzB7b7uGFDvVnsvMr9Pu1AF8vaivBlVIaYgHKa5u8ha.9tuTE7i",
+        "id": 1,
+        "username": "emma",
+        "password": "$2a$10$UU.R9nw9rNP5YnhaCcwyDew5xHzvY2AmzzPQZcTVIZaY5I/V3s0DW",
         "role": "customer",
-        "name": "JSON User",
-        "email": "user@json.com",
-        "address": {
-          "street": "User St",
-          "city": "User City",
-          "state": "US",
-          "postal_code": "22222",
-          "country": "USA"
-        },
-        "created_at": "2026-01-25T23:33:58.9958961+01:00"
+        "name": "emma",
+        "email": "emma@gmail.com",
+        "address": {},
+        "created_at": "2026-02-28T01:45:36.744670492Z"
+      },
+      "items": [
+        {
+          "book": {
+            "id": 4,
+            "title": "The Hobbit",
+            "author": {
+              "id": 5,
+              "first_name": "J.R.R.",
+              "last_name": "Tolkien",
+              "bio": "English writer, father of modern fantasy"
+            },
+            "genres": [
+              "General"
+            ],
+            "published_at": "0001-01-01T00:00:00Z",
+            "price": 13.99,
+            "stock": 150
+          },
+          "quantity": 1
+        }
+      ],
+      "total_price": 13.99,
+      "created_at": "2026-02-28T01:56:39.212191168Z",
+      "status": "confirmed"
+    },
+    "3": {
+      "id": 3,
+      "user_id": 1,
+      "user": {
+        "id": 1,
+        "username": "emma",
+        "password": "$2a$10$UU.R9nw9rNP5YnhaCcwyDew5xHzvY2AmzzPQZcTVIZaY5I/V3s0DW",
+        "role": "customer",
+        "name": "emma",
+        "email": "emma@gmail.com",
+        "address": {},
+        "created_at": "2026-02-28T01:45:36.744670492Z"
+      },
+      "items": [
+        {
+          "book": {
+            "id": 5,
+            "title": "Brave New World",
+            "author": {
+              "id": 6,
+              "first_name": "Aldous",
+              "last_name": "Huxley",
+              "bio": "English writer, author of Brave New World"
+            },
+            "genres": [
+              "General"
+            ],
+            "published_at": "0001-01-01T00:00:00Z",
+            "price": 14.99,
+            "stock": 100
+          },
+          "quantity": 1
+        }
+      ],
+      "total_price": 14.99,
+      "created_at": "2026-02-28T01:56:44.878238847Z",
+      "status": "confirmed"
+    },
+    "4": {
+      "id": 4,
+      "user_id": 3,
+      "user": {
+        "id": 3,
+        "username": "ghita bellamine",
+        "password": "$2a$10$39f6Yq6lcxfuB1HBPzxnZO4/AgKlGcE8EyT8hq6/2ABOT2fYZuJ2m",
+        "role": "customer",
+        "name": "ghita",
+        "email": "ghita@gmail.com",
+        "address": {},
+        "created_at": "2026-02-28T01:47:05.445225879Z"
       },
       "items": [
         {
           "book": {
             "id": 2,
-            "title": "",
+            "title": "The Great Gatsby",
             "author": {
-              "first_name": "",
-              "last_name": ""
+              "id": 2,
+              "first_name": "F. Scott",
+              "last_name": "Fitzgerald",
+              "bio": "American writer of the Jazz Age"
             },
-            "genres": null,
+            "genres": [
+              "General"
+            ],
             "published_at": "0001-01-01T00:00:00Z",
-            "price": 0,
-            "stock": 0
+            "price": 15.99,
+            "stock": 175
+          },
+          "quantity": 1
+        }
+      ],
+      "total_price": 15.99,
+      "created_at": "2026-02-28T01:57:12.060606153Z",
+      "status": "confirmed"
+    },
+    "5": {
+      "id": 5,
+      "user_id": 3,
+      "user": {
+        "id": 3,
+        "username": "ghita bellamine",
+        "password": "$2a$10$39f6Yq6lcxfuB1HBPzxnZO4/AgKlGcE8EyT8hq6/2ABOT2fYZuJ2m",
+        "role": "customer",
+        "name": "ghita",
+        "email": "ghita@gmail.com",
+        "address": {},
+        "created_at": "2026-02-28T01:47:05.445225879Z"
+      },
+      "items": [
+        {
+          "book": {
+            "id": 3,
+            "title": "1984",
+            "author": {
+              "id": 3,
+              "first_name": "George",
+              "last_name": "Orwell",
+              "bio": "English novelist, known for 1984 and Animal Farm"
+            },
+            "genres": [
+              "General"
+            ],
+            "published_at": "0001-01-01T00:00:00Z",
+            "price": 15.99,
+            "stock": 178
+          },
+          "quantity": 1
+        }
+      ],
+      "total_price": 15.99,
+      "created_at": "2026-02-28T01:57:16.724531363Z",
+      "status": "confirmed"
+    },
+    "6": {
+      "id": 6,
+      "user_id": 3,
+      "user": {
+        "id": 3,
+        "username": "ghita bellamine",
+        "password": "$2a$10$39f6Yq6lcxfuB1HBPzxnZO4/AgKlGcE8EyT8hq6/2ABOT2fYZuJ2m",
+        "role": "customer",
+        "name": "ghita",
+        "email": "ghita@gmail.com",
+        "address": {},
+        "created_at": "2026-02-28T01:47:05.445225879Z"
+      },
+      "items": [
+        {
+          "book": {
+            "id": 2,
+            "title": "The Great Gatsby",
+            "author": {
+              "id": 2,
+              "first_name": "F. Scott",
+              "last_name": "Fitzgerald",
+              "bio": "American writer of the Jazz Age"
+            },
+            "genres": [
+              "General"
+            ],
+            "published_at": "0001-01-01T00:00:00Z",
+            "price": 15.99,
+            "stock": 174
+          },
+          "quantity": 1
+        }
+      ],
+      "total_price": 15.99,
+      "created_at": "2026-02-28T01:57:21.392314906Z",
+      "status": "confirmed"
+    },
+    "7": {
+      "id": 7,
+      "user_id": 4,
+      "user": {
+        "id": 4,
+        "username": "bob",
+        "password": "$2a$10$oqKY4.qGMJuYjCAni6DOj.nmqO.X7iZBDAEpSNViIdhGFxQJ6YPFy",
+        "role": "customer",
+        "name": "bob",
+        "email": "bob@gmail.com",
+        "address": {},
+        "created_at": "2026-02-28T01:55:18.316444224Z"
+      },
+      "items": [
+        {
+          "book": {
+            "id": 1,
+            "title": "To Kill MockingBird",
+            "author": {
+              "id": 1,
+              "first_name": "Harper",
+              "last_name": "Lee",
+              "bio": "American novelist best known for To Kill a Mockingbird"
+            },
+            "genres": [
+              "General"
+            ],
+            "published_at": "0001-01-01T00:00:00Z",
+            "price": 14.99,
+            "stock": 150
           },
           "quantity": 10
         }
       ],
       "total_price": 149.9,
-      "created_at": "2026-02-01T15:57:42.3178172+01:00",
+      "created_at": "2026-02-28T01:57:48.821945914Z",
+      "status": "confirmed"
+    },
+    "8": {
+      "id": 8,
+      "user_id": 4,
+      "user": {
+        "id": 4,
+        "username": "bob",
+        "password": "$2a$10$oqKY4.qGMJuYjCAni6DOj.nmqO.X7iZBDAEpSNViIdhGFxQJ6YPFy",
+        "role": "customer",
+        "name": "bob",
+        "email": "bob@gmail.com",
+        "address": {},
+        "created_at": "2026-02-28T01:55:18.316444224Z"
+      },
+      "items": [
+        {
+          "book": {
+            "id": 2,
+            "title": "The Great Gatsby",
+            "author": {
+              "id": 2,
+              "first_name": "F. Scott",
+              "last_name": "Fitzgerald",
+              "bio": "American writer of the Jazz Age"
+            },
+            "genres": [
+              "General"
+            ],
+            "published_at": "0001-01-01T00:00:00Z",
+            "price": 15.99,
+            "stock": 173
+          },
+          "quantity": 22
+        }
+      ],
+      "total_price": 351.78000000000003,
+      "created_at": "2026-02-28T01:58:13.324932249Z",
       "status": "confirmed"
     }
   },
   "next_ids": {
-    "author": 12,
-    "book": 4,
-    "order": 10,
-    "user": 8
+    "author": 7,
+    "book": 6,
+    "order": 9,
+    "user": 6
   }
 }
